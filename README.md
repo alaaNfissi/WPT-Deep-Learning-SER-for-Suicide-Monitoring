@@ -48,7 +48,6 @@
       <ul>
         <li><a href="#getting-the-code">Getting the code</a></li>
         <li><a href="#dependencies">Dependencies</a></li>
-        <li><a href="#reproducing-the-results">Reproducing the results</a></li>
       </ul>
     </li>
     <li>
