@@ -11,7 +11,7 @@
   <h3 align="center">Advanced Multiresolution Wavelet Packet Transform Recursive Neural Network for Emotion Analysis in High-Risk Suicide Calls</h3>
 
   <p align="center">
-    This paper has been submitted for publication in the 23^{rd} IEEE International Conference on Machine Learning and Applications (ICMLA) 2024.
+    This paper has been submitted for publication in the 23rd IEEE International Conference on Machine Learning and Applications (ICMLA) 2024.
     <br />
    </p>
    <!-- <a href="https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring"><strong>Explore the docs »</strong></a> -->
