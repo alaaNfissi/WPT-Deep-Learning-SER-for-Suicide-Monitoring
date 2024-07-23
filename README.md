@@ -203,7 +203,7 @@ to the authors. See `LICENSE.md` for the full license text.
 
 Alaa Nfissi - [@LinkedIn](https://www.linkedin.com/in/alaa-nfissi/) - alaa.nfissi@mail.concordia.ca
 
-Github Link: [https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition](https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition)
+Github Link: [https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring](https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
