@@ -4,17 +4,17 @@
 <br />
 
 <div align="center">
-  <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition">
+  <a href="https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring">
     <img src="figures/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">SigWavNet: Learning Multiresolution Signal Wavelet Network for Speech Emotion Recognition</h3>
+  <h3 align="center">Advanced Multiresolution Wavelet Packet Transform Recursive Neural Network for Emotion Analysis in High-Risk Suicide Calls</h3>
 
   <p align="center">
-    This paper has been submitted for publication in IEEE Transactions on Affective Computing.
+    This paper has been submitted for publication in the 23^{rd} IEEE International Conference on Machine Learning and Applications (ICMLA) 2024.
     <br />
    </p>
-   <!-- <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition"><strong>Explore the docs »</strong></a> -->
+   <!-- <a href="https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring"><strong>Explore the docs »</strong></a> -->
 </div>
    
 
@@ -29,9 +29,9 @@
 <div align="center">
     <p align="center">
     ·
-    <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition/issues">Report Bug</a>
+    <a href="https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring/issues">Report Bug</a>
     ·
-    <a href="https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition/issues">Request Feature</a>
+    <a href="https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring/issues">Request Feature</a>
   </p>
 </div>
 
@@ -54,8 +54,7 @@
     <li>
       <a href="#results">Results</a>
       <ul>
-        <li><a href="#on-iemocap-dataset">On IEMOCAP dataset</a></li>
-        <li><a href="#on-tess-dataset">On EMO-DB dataset</a></li>
+        <li><a href="#on-nspl-crise-dataset">On NSPL-CRISE dataset</a></li>
       </ul>
     </li>
     <li><a href="#contributing">Contributing</a></li>
@@ -68,12 +67,12 @@
 <!-- ABSTRACT -->
 ## Abstract
 
-<p align="justify"> In the field of human-computer interaction and psychological assessment, speech emotion recognition (SER) plays an important role in deciphering emotional states from speech signals. Despite advancements, challenges persist due to system complexity, feature distinctiveness issues, and noise interference. This paper introduces a new end-to-end (E2E) deep learning multi-resolution framework for SER, addressing these limitations by extracting meaningful representations directly from raw waveform speech signals. By leveraging the properties of the fast discrete wavelet transform (FDWT), including the cascade algorithm, conjugate quadrature filter, and coefficient denoising, our approach introduces a learnable model for both wavelet bases and denoising through deep learning techniques. The framework incorporates an activation function for learnable asymmetric hard thresholding of wavelet coefficients. Our approach exploits the capabilities of wavelets for effective localization in both time and frequency domains. We then combine one-dimensional dilated convolutional neural networks (1D dilated CNN) with a spatial attention layer and bidirectional gated recurrent units (Bi-GRU) with a temporal attention layer to efficiently capture the nuanced spatial and temporal characteristics of emotional features. By handling variable-length speech without segmentation and eliminating the need for pre or post-processing, the proposed model outperformed state-of-the-art methods on IEMOCAP and EMO-DB datasets.</p>
+<p align="justify"> In human-computer interaction and psychological evaluation, speech emotion recognition (SER) is crucial for interpreting emotional states from spoken language. Although there have been advancements, challenges such as system complexity, issues with feature distinctiveness, and noise interference continue to persist. This paper presents a novel end-to-end (E2E) deep learning multi-resolution framework for SER, which tackles these limitations by deriving significant representations directly from raw speech waveform signals. By leveraging the properties of wavelet packet transform (WPT), our approach introduces a learnable model for both wavelet bases and denoising through deep learning techniques. Unlike discrete wavelet transform (DWT), WPT offers a more detailed analysis by decomposing both approximation and detail coefficients, providing a finer resolution in the time-frequency domain. This capability enhances feature extraction by capturing more nuanced signal characteristics across different frequency bands. The framework incorporates a learnable activation function for asymmetric hard thresholding of wavelet packet coefficients. Our approach exploits the capabilities of wavelet packets for effective localization in both time and frequency domains. We then combine one-dimensional dilated convolutional neural networks (1D dilated CNN) with a spatial attention layer and bidirectional gated recurrent units (Bi-GRU) with a temporal attention layer to efficiently capture emotional features' nuanced spatial and temporal characteristics. By handling variable-length speech without segmentation and eliminating the need for pre or post-processing, the proposed model outperformed state-of-the-art methods on our NSPL-CRISE dataset.</p>
 <div align="center">
   
 ![model-architecture][model-architecture]
   
-*L-LFDWTB SigWavNet General Architecture*
+*Model's General Architecture*
   
 </div>
 
@@ -99,8 +98,7 @@
 To ensure consistency and compatibility across our datasets, we first convert all audio signals to a uniform 16 KHz sampling rate and mono-channel format. We then divide each dataset into two primary subsets: 90% for training and validation purposes, and the remaining 10% designated for testing as unseen data. For the training and validation segments, we implement a 10-fold cross-validation method. This partitioning and the allocation within the cross-validation folds leverage stratified random sampling, a method that organizes the dataset into homogenous strata based on emotional categories. Unlike basic random sampling, this approach guarantees a proportional representation of each class, leading to a more equitable and representative dataset division.</p>
 
 <p align="justify">
-In the quest to identify optimal hyperparameters for our model, we utilize a grid search strategy. Hyperparameter tuning can be approached in several ways, including the use of scheduling algorithms. These schedulers can efficiently manage trials by early termination of less promising ones, as well as pausing, duplicating, or modifying the hyperparameters of ongoing trials. For its effectiveness and performance, we have selected the Asynchronous Successive Halving Algorithm (ASHA) as our optimization technique.
-The data preprocessing used in this study is provided in the `Data_exploration` folder.  
+In the quest to identify optimal hyperparameters for our model, we utilize a grid search strategy. Hyperparameter tuning can be approached in several ways, including the use of scheduling algorithms. These schedulers can efficiently manage trials by early termination of less promising ones, as well as pausing, duplicating, or modifying the hyperparameters of ongoing trials. For its effectiveness and performance, we have selected the Asynchronous Successive Halving Algorithm (ASHA) as our optimization technique. The data preprocessing used in this study is provided in the `Data_exploration` folder.  
 </p>
 
 ### Getting the code
@@ -108,9 +106,9 @@ The data preprocessing used in this study is provided in the `Data_exploration` 
 You can download a copy of all the files in this repository by cloning the
 [git](https://git-scm.com/) repository:
 
-    git clone https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition.git
+    git clone https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring.git
 
-or [download a zip archive](https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-Signal-Wavelet-Network-for-Speech-Emotion-Recognition/archive/refs/heads/main.zip).
+or [download a zip archive](https://github.com/alaaNfissi/WPT-Deep-Learning-SER-for-Suicide-Monitoring/archive/refs/heads/main.zip).
 
 ### Dependencies
 
@@ -152,60 +150,17 @@ Install all required dependencies in it:
   
 </p>
 
-### Reproducing the results
-
-<p align="justify">
-
-1. First, you need to download IEMOCAP and EMO-DB datasets:
-  * [IEMOCAP official website](https://sail.usc.edu/iemocap/)
-  * [EMO-DB official website](http://www.emodb.bilderbar.info/download/)
-  
-2. To be able to explore the data you need to execute the Jupyter Notebook that prepares the `csv` files needed for the experiments.
-To do this, you must first start the notebook server by going into the
-repository top level and running:
-```sh 
-    jupyter notebook
-```
-This will start the server and open your default web browser to the Jupyter
-interface. On the page, go into the `Data_exploration` folder and select the
-`data_exploration.ipynb` notebook to view/run. Make sure to specify the correct dataset paths on your machine as described in the notebook.
-The notebook is divided into cells (some have text while others have code).
-Each cell can be executed using `Shift + Enter`.
-Executing text cells does nothing and executing code cells runs the code and produces its output.
-To execute the whole notebook, run all cells in order.
-
-3. After generating the needed `csv` files `IEMOCAP_dataset.csv` and `EMO_DB_dataset.csv`, go to your terminal where the `ser-env` environment was
-  activated go to the project folder and run the python script `main.py` as follows:
-
-```sh  
-python main.py
-``` 
-  _You can do the same thing for the EMO-DB dataset by changing the dataset csv file to `EMO_DB_dataset.csv`._
-
-</p>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Results
 
 ### On IEMOCAP dataset
 <p align="justify"> 
-The trials showcase the proficiency of the SigWavNet model in recognizing diverse emotional expressions from the IEMOCAP dataset. This model achieves notable accuracy in distinguishing between various emotions, as indicated by its performance metrics—precision, recall, and F1-score—across different emotional categories. Specifically, SigWavNet performs exceptionally well in identifying 'Neutral' emotions, achieving a high precision rate of 97% and a recall rate of 93% (refer to the paper). This underscores the model's strength in accurately pinpointing this particular emotional state. The confusion matrix in SigWavNet confusion matrix figure describes class-wise test results on IEMOCAP. 
+The trials showcase the model's proficiency in recognizing diverse emotional expressions from the NSPL-CRISE dataset. The confusion matrix highlights our model's strong performance and areas for improvement. It accurately classifies "Angry" at 75.68%, with some confusion with "Neutral" and "Sad" at 12.16% each. "FCW" shows 68.18% accuracy, often misclassified as "Sad" (18.18%) and "Neutral" (9.09%). "Happy" is recognized with 76.32% accuracy, but is sometimes confused with "Angry" (10.53%) and "Neutral" (9.21%). "Neutral" has a high accuracy of 78.02%, with misclassifications involving "Sad" (9.89%), "Angry" (6.59%), and "Happy" (5.49%). "Sad" is correctly identified 74.67% of the time, with errors in "FCW" (13.33%) and "Neutral" (9.33%).
 </p>
 
-SigWavNet confusion matrix on IEMOCAP            | 
+SigWavNet confusion matrix on NSPL-CRISE            | 
 :-----------------------------------------------------------------:|
-![sigwavnet_cfm_iemocap](figures/iemocap_cfm.png)  |
+![sigwavnet_cfm_iemocap](figures/nspl_crise_cfm_FWPT.png)  |
 
-
-### On EMO-DB dataset
-<p align="justify"> 
-The evaluation of SigWavNet on the EMO-DB dataset provides a comprehensive analysis of its ability to distinguish between various emotional states, as demonstrated by its commendable precision, recall, and F1-score metrics for different emotions. Particularly notable is the model's performance on 'Anger', where it achieves an exceptional precision rate of 100%, reflecting its precision in predicting this specific emotion. Alongside a recall rate of 92.3%, SigWavNet effectively identifies the majority of 'Anger' instances, leading to a harmoniously balanced F1-score of 96% (refer to the paper). The confusion matrix in SigWavNet confusion matrix figure describes class-wise test results on EMO-DB.  
-</p>
-
-SigWavNet confusion matrix on EMO-DB            | 
-:-----------------------------------------------------------------:|
-![sigwavnet_cfm_emodb](figures/emodb_cfm.png)  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -270,7 +225,7 @@ Github Link: [https://github.com/alaaNfissi/SigWavNet-Learning-Multiresolution-S
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[model-architecture]: figures/Aggregated_SigWavNet_V.png
+[model-architecture]: figures/WPT_SigWavNet_Architecture.png
 
 
 [anaconda.com]: https://anaconda.org/conda-forge/mlconjug/badges/version.svg
