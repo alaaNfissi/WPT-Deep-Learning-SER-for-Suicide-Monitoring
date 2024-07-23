@@ -156,9 +156,9 @@ Install all required dependencies in it:
 The trials showcase the model's proficiency in recognizing diverse emotional expressions from the NSPL-CRISE dataset. The confusion matrix highlights our model's strong performance and areas for improvement. It accurately classifies "Angry" at 75.68%, with some confusion with "Neutral" and "Sad" at 12.16% each. "FCW" shows 68.18% accuracy, often misclassified as "Sad" (18.18%) and "Neutral" (9.09%). "Happy" is recognized with 76.32% accuracy, but is sometimes confused with "Angry" (10.53%) and "Neutral" (9.21%). "Neutral" has a high accuracy of 78.02%, with misclassifications involving "Sad" (9.89%), "Angry" (6.59%), and "Happy" (5.49%). "Sad" is correctly identified 74.67% of the time, with errors in "FCW" (13.33%) and "Neutral" (9.33%).
 </p>
 
-SigWavNet confusion matrix on NSPL-CRISE            | 
+Confusion matrix on NSPL-CRISE            | 
 :-----------------------------------------------------------------:|
-![sigwavnet_cfm_iemocap](figures/nspl_crise_cfm_FWPT.png)  |
+![nspl_crise_cfm](figures/nspl_crise_cfm_FWPT.png)  |
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
